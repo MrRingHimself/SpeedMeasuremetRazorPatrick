@@ -1,0 +1,37 @@
+﻿@page
+@model SpeedMeasuremetRazor.Pages.Locations.DeleteLocationModel
+@{
+    ViewData["Title"] = "Slet Lokation";
+}
+
+<h1>Slet Lokation</h1>
+
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Location.LocationId" class="control-label">Lokations Id</label>
+                <input asp-for="@Model.Location.LocationId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Location.Address" class="control-label">Lokationens Addresse</label>
+                <input asp-for="@Model.Location.Address" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Location.SpeedLimit" class="control-label">Lokationens Fartgrænse</label>
+                <input asp-for="@Model.Location.SpeedLimit" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Location.Zone" class="control-label">Lokationens Zone</label>
+                <input asp-for="@Model.Location.Zone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Slet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="Index">Tilbage til lokations listen</a>
+</div>

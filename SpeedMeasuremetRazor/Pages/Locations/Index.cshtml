@@ -1,0 +1,55 @@
+﻿@page
+@model SpeedMeasuremetRazor.Pages.Locations.IndexModel
+@{
+    ViewData["Title"] = "Placeringer";
+}
+
+<h1>Placeringer</h1>
+
+<p>
+    <a asp-page="/Locations/CreateLocation">Opret Lokation</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th>
+            Lokations Id
+        </th>
+        <th>
+            Addresse
+        </th>
+            <th>
+                Fartgrænse
+            </th>
+            <th>
+                Zone
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Locals)
+        {
+            <tr>
+                <td>
+                    @item.LocationId
+                </td>
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.SpeedLimit
+                </td>
+                <td>
+                    @item.Zone
+                </td>
+                <td>
+                    <a asp-page="/Locations/EditLocation" asp-route-id="@item.LocationId">Rediger</a>
+                </td>
+                <td>
+                    <a asp-page="/Locations/DeleteLocation" asp-route-id="@item.LocationId">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
